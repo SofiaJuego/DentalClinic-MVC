@@ -12,8 +12,8 @@ public class AppointmentService {
 
     private final IDao<Appointment> appointmentIDao;
 
-    public AppointmentService(){
-        this.appointmentIDao = new AppointmentDaoList();
+    public AppointmentService(IDao<Appointment> appointmentIDao) {
+        this.appointmentIDao = appointmentIDao;
     }
 
     public Appointment save(Appointment appointment){
