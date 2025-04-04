@@ -1,7 +1,6 @@
 package com.dh.DentalClinicMVC.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +8,6 @@ import java.util.Set;
 @Entity
 @Table(name = "Patients")
 public class Patient {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

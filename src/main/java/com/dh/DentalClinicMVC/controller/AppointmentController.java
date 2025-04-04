@@ -1,6 +1,5 @@
 package com.dh.DentalClinicMVC.controller;
 import com.dh.DentalClinicMVC.dto.AppointmentDTO;
-import com.dh.DentalClinicMVC.entity.Appointment;
 import com.dh.DentalClinicMVC.service.IAppointmentService;
 import com.dh.DentalClinicMVC.service.IDentistService;
 import com.dh.DentalClinicMVC.service.IPatientService;
@@ -71,7 +70,6 @@ public class AppointmentController {
 
         return response;
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {

@@ -1,7 +1,6 @@
 package com.dh.DentalClinicMVC.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
@@ -22,10 +21,8 @@ public class Appointment {
     @Column(name = "date")
     private LocalDate date;
 
-
     public Appointment() {
     }
-
 
     public Long getId() {
         return id;

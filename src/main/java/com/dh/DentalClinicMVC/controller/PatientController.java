@@ -5,7 +5,6 @@ import com.dh.DentalClinicMVC.entity.Patient;
 import com.dh.DentalClinicMVC.service.IPatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -18,7 +17,6 @@ public class PatientController {
     public PatientController(IPatientService patientService) {
         this.patientService = patientService;
     }
-
 
     //ENDPOINT: Agregar paciente
     @PostMapping

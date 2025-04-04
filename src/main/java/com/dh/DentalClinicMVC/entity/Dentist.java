@@ -1,7 +1,6 @@
 package com.dh.DentalClinicMVC.entity;
 
 import jakarta.persistence.*;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +27,6 @@ public class Dentist {
 
     public Dentist() {
     }
-
 
     public Long getId() {
         return id;

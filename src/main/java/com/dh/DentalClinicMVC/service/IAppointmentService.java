@@ -1,7 +1,5 @@
 package com.dh.DentalClinicMVC.service;
 import com.dh.DentalClinicMVC.dto.AppointmentDTO;
-import com.dh.DentalClinicMVC.entity.Appointment;
-
 import java.util.List;
 import java.util.Optional;
 

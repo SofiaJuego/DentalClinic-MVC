@@ -17,7 +17,6 @@ public class PatientServiceImpl implements IPatientService {
         this.patientRepository = patientRepository;
     }
 
-
     @Override
     public Patient save(Patient patient) {
         return patientRepository.save(patient);
@@ -31,13 +30,11 @@ public class PatientServiceImpl implements IPatientService {
     @Override
     public void update(Patient patient) {
         patientRepository.save(patient);
-
     }
 
     @Override
     public void delete(Long id) {
         patientRepository.deleteById(id);
-
     }
 
     @Override

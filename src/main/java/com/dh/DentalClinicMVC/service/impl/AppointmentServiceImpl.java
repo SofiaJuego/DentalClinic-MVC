@@ -7,9 +7,7 @@ import com.dh.DentalClinicMVC.entity.Patient;
 import com.dh.DentalClinicMVC.repository.IAppointmentRepository;
 import com.dh.DentalClinicMVC.service.IAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -21,7 +19,6 @@ public class AppointmentServiceImpl implements IAppointmentService {
 
     @Autowired
     private IAppointmentRepository appointmentRepository;
-
 
     @Override
     public AppointmentDTO save(AppointmentDTO appointmentDTO) {
@@ -126,8 +123,6 @@ public class AppointmentServiceImpl implements IAppointmentService {
         } else {
             throw new Exception("No se pudo actualizar el turno");
         }
-
-
 
     }
 
