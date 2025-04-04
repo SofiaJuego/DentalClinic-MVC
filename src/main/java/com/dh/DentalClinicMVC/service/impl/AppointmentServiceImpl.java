@@ -4,6 +4,7 @@ import com.dh.DentalClinicMVC.dto.AppointmentDTO;
 import com.dh.DentalClinicMVC.entity.Appointment;
 import com.dh.DentalClinicMVC.entity.Dentist;
 import com.dh.DentalClinicMVC.entity.Patient;
+import com.dh.DentalClinicMVC.exception.ResourceNotFoundException;
 import com.dh.DentalClinicMVC.repository.IAppointmentRepository;
 import com.dh.DentalClinicMVC.service.IAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,8 +128,32 @@ public class AppointmentServiceImpl implements IAppointmentService {
     }
 
     @Override
-    public void delete(Long id) {
-        appointmentRepository.deleteById(id);
+    public Optional<AppointmentDTO> delete(Long id) throws ResourceNotFoundException {
+        //Buscamos la entidad por id en BD y la guardo en un Optional
+        Optional<Appointment> appointmentToLookFor = appointmentRepository.findById(id);
+
+        Optional<AppointmentDTO> appointmentDTO;
+
+        if (appointmentToLookFor.isPresent()) {
+            //recupero el turno que se encontro y lo guardo en una var
+            Appointment appointment = appointmentToLookFor.get();
+
+            //devuelvo dto
+            AppointmentDTO appointmentDTOToReturn = new AppointmentDTO();
+            appointmentDTOToReturn.setId(appointment.getId());
+            appointmentDTOToReturn.setDentist_id(appointment.getDentist().getId());
+            appointmentDTOToReturn.setPatient_id(appointment.getPatient().getId());
+            appointmentDTOToReturn.setDate(appointment.getDate().toString());
+
+            appointmentDTO = Optional.of(appointmentDTOToReturn);
+
+            return appointmentDTO;
+
+        } else {
+            //Exception
+            throw new ResourceNotFoundException("No se encontro el turno con id: " + id);
+        }
+
 
     }
 

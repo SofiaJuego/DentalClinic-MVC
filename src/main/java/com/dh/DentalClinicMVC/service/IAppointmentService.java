@@ -1,5 +1,7 @@
 package com.dh.DentalClinicMVC.service;
 import com.dh.DentalClinicMVC.dto.AppointmentDTO;
+import com.dh.DentalClinicMVC.exception.ResourceNotFoundException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +13,7 @@ public interface IAppointmentService {
 
     AppointmentDTO update(AppointmentDTO appointmentDTO) throws Exception;
 
-    void delete(Long id);
+    Optional<AppointmentDTO> delete(Long id) throws ResourceNotFoundException;
 
     List<AppointmentDTO> findAll();
 }
