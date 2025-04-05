@@ -48,7 +48,7 @@ public class AppointmentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AppointmentDTO> findById(@PathVariable Long id){
+    public ResponseEntity<AppointmentDTO> findById(@PathVariable Long id) throws ResourceNotFoundException {
         Optional<AppointmentDTO> appointmentToLookFor = appointmentService.findById(id);
 
         if (appointmentToLookFor.isPresent()){

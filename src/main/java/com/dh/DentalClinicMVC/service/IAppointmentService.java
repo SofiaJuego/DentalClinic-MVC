@@ -9,7 +9,7 @@ public interface IAppointmentService {
 
     AppointmentDTO save(AppointmentDTO appointmentDTO);
 
-    Optional<AppointmentDTO> findById(Long id);
+    Optional<AppointmentDTO> findById(Long id) throws ResourceNotFoundException;
 
     AppointmentDTO update(AppointmentDTO appointmentDTO) throws Exception;
 

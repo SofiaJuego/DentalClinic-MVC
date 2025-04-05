@@ -62,7 +62,7 @@ public class AppointmentServiceImpl implements IAppointmentService {
     }
 
     @Override
-    public Optional<AppointmentDTO> findById(Long id) {
+    public Optional<AppointmentDTO> findById(Long id) throws ResourceNotFoundException {
 
         Optional<Appointment> appointmentToLookFor = appointmentRepository.findById(id);
 
@@ -77,8 +77,13 @@ public class AppointmentServiceImpl implements IAppointmentService {
             appointmentDTOToReturn.setDate(appointment.getDate().toString());
 
             appointmentDTO = Optional.of(appointmentDTOToReturn);
+            return appointmentDTO;
+
+        } else {
+            throw new ResourceNotFoundException("No se encontro el turno con id: " + id);
         }
-        return appointmentDTO;
+
+
     }
 
     @Override
