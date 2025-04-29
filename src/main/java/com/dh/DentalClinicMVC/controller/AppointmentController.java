@@ -16,9 +16,9 @@ import java.util.Optional;
 @RequestMapping("/turnos")
 public class AppointmentController {
 
-    private  IAppointmentService appointmentService;
-    private  IDentistService dentistService;
-    private  IPatientService patientService;
+    private final IAppointmentService appointmentService;
+    private final IDentistService dentistService;
+    private final IPatientService patientService;
 
     @Autowired
     public AppointmentController(IAppointmentService appointmentService, IDentistService dentistService, IPatientService patientService) {
